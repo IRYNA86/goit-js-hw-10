@@ -3,31 +3,27 @@ const DEBOUNCE_DELAY = 300;
 const userList = document.getElementById("search-box");
 const nameCountry = document.querySelector('.country-list');
 const aboutCountry = document.querySelector('.country-info');
-
-userList.addEventListener("input", () => {
-    fetchAllCountries()
-    .then((countries) => renderCountryList(countries))
-    .catch((error) => console.log(error));
-});
-function fetchAllCountries() {
-  return fetch("https://restcountries.com/v3.1/all").then(
-    (response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    }
-  );
-}
-function renderCountryList(countries) {
-  const markup = countries
-    .map((country) => {
-      return `<li>
-          <p><b>Name</b>: ${official}</p>
-          <p><b>Email</b>: ${capital}</p>
-          <p><b>Company</b>: ${population}</p>
-        </li>`;
+userList.addEventListener('input', (e) => {
+    userList.textContent = e.currentTarget.value;
+    
+})
+console.log(userList);
+let countriess;
+fetch("https://restcountries.com/v2/all")
+    .then(function (res) {
+        return res.json();
     })
-    .join("");
-  nameCountry.innerHTML = markup;
+    .then(function (data) {
+        initialize(data);
+    })
+    .catch(function (err) {
+        console.log('Error', err);
+    })
+function initialize(countriesData) {
+    countriess = countriesData
+        .map((countries) => {
+                    console.log(`${countries.name}`);
+    })
+   
 }
+    

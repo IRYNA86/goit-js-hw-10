@@ -18,7 +18,20 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
-.manycointrydiv {
+.manycountrydiv {
   display: flex;
-  text-align: center;
+  align-items: center;
+}
+li,
+h3 {
+  text-decoration: none;
+  list-style: none;
+}
+.listCountry {
+  font-weight: 700;
+  font-size: 24px;
+}
+.language {
+  font-weight: 400;
+  font-size: 20px;
 }

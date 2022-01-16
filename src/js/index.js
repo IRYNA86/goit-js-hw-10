@@ -22,7 +22,7 @@ function countrySearchInputHandler(e) {
           };
       } else if (data.status === 404) {
         {
-           Notiflix.Notify.warning("❌ No country has been found. Please enter a more specific query!")
+           Notiflix.Notify.failure("❌ Oops, there is no country with that name")
       };
       } else if (data.length === 1) {
           buildListMarkup(data, articlesOneCountry);

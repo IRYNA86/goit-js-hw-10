@@ -9,7 +9,7 @@ export default {
     // return fetch(baseUrl + searchParams).then(res => res.json());
     // const languages = Object.values(languages);
     const responseFields = 'name,capital,population,flags,languages';
-   return fetch(`https://restcountries.com/v3.1/name/${name}?fields=${responseFields}`).then(res => res.json())
+   return fetch(`https://restcountries.com/v2/name/${name}?fields=${responseFields}`).then(res => res.json())
    console.log(res.json()); 
   },
 };

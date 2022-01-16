@@ -1,12 +1,21 @@
-<h1 class="country"> {{name.official}}</h1>
+<h1 class="country"> {{name}}</h1>
 <div class="form_country">
-    <div><img src="{{flags.svg}}" alt="{{name.official}}" class="flag" width="50" height="30" /></div>
+    <div><img src="{{flags.svg}}" alt="{{name}}" class="flag" width="50" height="30" /></div>
     <ul>
         <p class="capital"><span class="text">Capital: </span>{{capital}}</p>
         <p class="population"><span class="text">Population: </span>{{population}}</p>
-        <p class="languages"><span class="text">Languages: </span>{{languages}}
+        <ul class="country-languages">
+            <h2>Languages:</h2>
+            {{#each languages}}
+            <li class="country-languages__link">{{this.name}}</li>
+            {{/each}}
+        </ul>
+        
+        
+        {{!-- <p class="languages"><span class="text">Languages: </span>{{languages.key}} --}}
             {{!-- <li class="tag-list__item">{{name.official}}</li>
             {{/each}} --}}
         </p>
     </ul>
     </div>
+    
